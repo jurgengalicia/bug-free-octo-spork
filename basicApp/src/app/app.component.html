@@ -1,5 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
+<div style="text-align:right">
   <h1>
     Welcome to {{ title }}!
   </h1>
@@ -7,10 +7,12 @@
 </div>
 <ul>
   <li>
-    <h2><a href="#">Click here</a></h2>
+    <h2><a href="#" (click)="IncrementCounter();">Click here</a></h2>
   </li>
   <li>
-    <h2></h2>
+	  <!--Used ngClass to change the header's class as needed.-->
+	  <!--Additionally, we could use ngStyle to change the pixel size of font-size as needed-->
+    <h2 [ngClass]="{zero: counter==0, evenNum: counter%2 == 0, oddNum: counter%2 != 0}">{{ counter }}</h2>
   </li>
 </ul>
 <router-outlet></router-outlet>
